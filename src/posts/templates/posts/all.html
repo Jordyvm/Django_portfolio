@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+<h1>All posts</h1>
+{% endblock %}
+
+{% block main_content %}
+
+    <h2>This is the list of posts</h2>
+    {% for post in post_objects %}
+        <div>
+            <h3>{{ post.title}}</h3>
+            <p>{{ post.description }}</p>
+            <p>{{ post.date }}</p>
+            {% for skill in post.skills.all %}
+                <p>{{ skill }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+{% endblock %}
