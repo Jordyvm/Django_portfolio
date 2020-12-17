@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 from posts.views import post_list_view
 from posts.views import post_detail_view
 
@@ -17,3 +19,5 @@ urlpatterns = [
     path('all/', post_list_view, name='all')
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()
