@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block page_title %}
 Detail
 {% endblock %}
@@ -8,11 +10,15 @@ Detail
 {% block main_content %}
 <div class="row">
     <h2 class="col-md-12">{{ post_object.title}}</h2>
-    <div class="col-md-6">{{ post_object.image}}</div>
+    <!-- <div class="col-md-6">{{ post_object.image}}</div> -->
+
+    <img class="col-md-8" src="{% static post_object.image %}" alt="My image"/>
     <div class="col-md-4">
+        <h4>Skills:</h4>
         {% for skill in post_object.skills.all %}
             <p>{{ skill }}</p>
         {% endfor %}</div>
+    <h4 class="col-md-12 mt-4">Description:</h4>
     <p class="col-md-12">{{ post_object.description}}</p>
 </div>
 {% endblock %}

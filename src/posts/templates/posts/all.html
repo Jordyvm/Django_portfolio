@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block page_title %}
 All Posts
 {% endblock %}
@@ -10,13 +12,14 @@ All Posts
 
     <div class="row">
     {% for post in post_objects %}
-        <div class="col-md-4">
-            <h3>{{ post.title}}</h3>
-            <p>{{ post.description }}</p>
-            <p>{{ post.date }}</p>
-            {% for skill in post.skills.all %}
-                <p>{{ skill }}</p>
-            {% endfor %}
+
+        <div class="col-md-6 cont">
+            <img class="img-fluid w-100 image" src="{% static post.image %}" alt="My image"/>
+            <div class="overlay">
+                <div class="overlay_text"></div>
+                <h4>{{ post.title }}</h4>
+                <h5>{{ post.date }}</h5>
+            </div>
         </div>
     {% endfor %}
     </div>

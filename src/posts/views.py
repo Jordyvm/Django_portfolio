@@ -12,8 +12,8 @@ def post_list_view(request):
 
     return render(request, "posts/all.html", context)
 
-def post_detail_view(request):
-    post_object = Post.objects.get(id=1)
+def post_detail_view(request, detail_id):
+    post_object = Post.objects.get(id=detail_id)
     context = {
         'post_object': post_object
 

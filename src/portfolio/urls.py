@@ -15,7 +15,7 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('about/', about_view, name='about'),
     path('contact/', contact_view, name='contact'),
-    path('detail/', post_detail_view, name='detail'),
+    path('detail/<int:detail_id>', post_detail_view, name='detail'),
     path('all/', post_list_view, name='all')
 
 ]
